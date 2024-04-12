@@ -1,3 +1,9 @@
+// *
+// **
+// ***
+// ****
+// *****
+
 function createPattern(numberOfRows) {
   for (var i = 0; i < numberOfRows; i++) {
     var strinToPrint = '';
