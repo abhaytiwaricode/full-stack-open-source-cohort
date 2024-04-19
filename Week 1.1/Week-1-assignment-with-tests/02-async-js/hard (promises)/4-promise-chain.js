@@ -6,17 +6,41 @@
  */
 
 function waitOneSecond() {
-
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 1000);
+  });
 }
 
 function waitTwoSecond() {
-
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 2000);
+  });
 }
 
 function waitThreeSecond() {
-
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, 3000);
+  });
 }
 
-function calculateTime() {
+async function calculateTime() {
+  const startTime = Date.now();
 
+  // Sequentially calling all three functions
+  await waitOneSecond();
+  await waitTwoSecond();
+  await waitThreeSecond();
+
+  const endTime = Date.now();
+  const duration = endTime - startTime;
+  console.log(`Sequential operation completed in ${duration} milliseconds.`);
 }
+
+// Example usage:
+calculateTime();
